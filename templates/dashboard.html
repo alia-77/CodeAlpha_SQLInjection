@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>SecureVault</h1>
+
+    <div>
+
+        Welcome, <strong>{{ username }}</strong>
+
+    </div>
+
+</header>
+
+<div class="buttons">
+
+    <a href="/add">
+
+        <button>Add Employee</button>
+
+    </a>
+
+    <a href="/search">
+
+        <button>SQL Injection Demo</button>
+
+    </a>
+
+    <a href="/logout">
+
+        <button>Logout</button>
+
+    </a>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>SSN</th>
+
+<th>Salary</th>
+
+<th></th>
+
+</tr>
+
+{% for employee in employees %}
+
+<tr>
+
+<td>{{ employee.id }}</td>
+
+<td>{{ employee.name }}</td>
+
+<td>{{ employee.email }}</td>
+
+<td>{{ employee.ssn }}</td>
+
+<td>{{ employee.salary }}</td>
+
+<td>
+
+<a href="/delete/{{ employee.id }}">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

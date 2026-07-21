@@ -1,0 +1,248 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+
+    background:#f5f8fc;
+    color:#1f2937;
+
+}
+
+header{
+
+    background:#0f2b5b;
+    color:white;
+
+    padding:20px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+}
+
+header h1{
+
+    font-size:30px;
+
+}
+
+.login-card{
+
+    width:420px;
+
+    background:white;
+
+    margin:80px auto;
+
+    padding:40px;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    text-align:center;
+
+}
+
+.login-card h1{
+
+    color:#0f2b5b;
+
+    margin-bottom:10px;
+
+}
+
+.login-card p{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #d4d4d4;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#0f2b5b;
+
+}
+
+button{
+
+    background:#0f2b5b;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    background:#1c4c97;
+
+}
+
+.buttons{
+
+    margin:35px;
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+}
+
+table{
+
+    width:90%;
+
+    margin:30px auto;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+
+}
+
+th{
+
+    background:#0f2b5b;
+
+    color:white;
+
+    padding:16px;
+
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:1px solid #eee;
+
+    text-align:center;
+
+}
+
+tr:hover{
+
+    background:#f3f7ff;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:#0f2b5b;
+
+    font-weight:600;
+
+}
+
+.demo{
+
+    width:900px;
+
+    margin:50px auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:14px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+
+}
+
+.demo h1{
+
+    color:#0f2b5b;
+
+    margin-bottom:20px;
+
+}
+
+.demo h2{
+
+    margin-top:30px;
+
+    color:#0f2b5b;
+
+}
+
+pre{
+
+    background:#eef4ff;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    overflow-x:auto;
+
+    margin:15px 0;
+
+    font-size:14px;
+
+}
+
+ul{
+
+    margin-left:25px;
+
+    margin-top:15px;
+
+}
+
+li{
+
+    margin-bottom:10px;
+
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SQL Injection Prevention Demo</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="demo">
+
+<h1>
+
+SQL Injection Prevention Demo
+
+</h1>
+
+<p>
+
+Try searching for an employee.
+
+Then try SQL Injection payloads like:
+
+</p>
+
+<pre>
+' OR '1'='1
+</pre>
+
+<pre>
+admin' --
+</pre>
+
+<pre>
+'; DROP TABLE employees; --
+</pre>
+
+<form method="post">
+
+<input
+
+type="text"
+
+name="query"
+
+placeholder="Search employee"
+
+value="{{ query }}"
+
+required
+
+>
+
+<button>
+
+Search
+
+</button>
+
+</form>
+
+<br>
+
+{% if results != None %}
+
+<h2>
+
+Results
+
+</h2>
+
+<table>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>SSN</th>
+
+<th>Salary</th>
+
+</tr>
+
+{% for employee in results %}
+
+<tr>
+
+<td>{{ employee.name }}</td>
+
+<td>{{ employee.email }}</td>
+
+<td>{{ employee.ssn }}</td>
+
+<td>{{ employee.salary }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+<br>
+
+<h2>
+
+Why doesn't SQL Injection work?
+
+</h2>
+
+<ul>
+
+<li>User input is never concatenated into raw SQL.</li>
+
+<li>SQLAlchemy automatically parameterizes database queries.</li>
+
+<li>The payload is treated as plain text instead of executable SQL.</li>
+
+<li>Sensitive information is encrypted before storage.</li>
+
+<li>Access requires authentication and a capability code.</li>
+
+</ul>
+
+<br>
+
+<a href="/dashboard">
+
+← Back
+
+</a>
+
+</div>
+
+</body>
+
+</html>

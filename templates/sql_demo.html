@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SQL Injection Demo</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="demo">
+
+<h1>
+
+SQL Injection Prevention
+
+</h1>
+
+<h2>
+
+Unsafe Query
+
+</h2>
+
+<pre>
+SELECT * FROM users
+WHERE username='admin' OR '1'='1';
+</pre>
+
+<p>
+
+The attacker changes the SQL query and bypasses authentication.
+
+</p>
+
+<h2>
+
+Secure Query
+
+</h2>
+
+<pre>
+db.query(User).filter(
+    User.username == username
+)
+</pre>
+
+<p>
+
+SQLAlchemy automatically parameterizes queries,
+preventing SQL injection attacks.
+
+</p>
+
+<h2>
+
+Security Layers
+
+</h2>
+
+<ul>
+
+<li>Password hashing using bcrypt</li>
+
+<li>Encrypted sensitive employee information</li>
+
+<li>Capability code authentication</li>
+
+<li>Parameterized SQL queries</li>
+
+<li>Authenticated user sessions</li>
+
+</ul>
+
+<br>
+
+<a href="/dashboard">
+
+← Back to Dashboard
+
+</a>
+
+</div>
+
+</body>
+
+</html>
