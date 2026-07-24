@@ -54,7 +54,7 @@ A few things in this repo are placeholders and should be swapped out before you 
 
 This app is set up to be deployed on Render. The build command is `pip install -r requirements.txt` and the start command is `uvicorn app:app --host 0.0.0.0 --port $PORT`. Environment variables (`DATABASE_URL`, `SESSION_SECRET`, `VAULT_SECRET`, `CAPABILITY_CODE`) are set in Render's dashboard rather than locally.
 
-Live demo link will be added here once deployed.
+Live demo link: https://codealpha-sqlinjection.onrender.com/
 
 ## Notes
 
