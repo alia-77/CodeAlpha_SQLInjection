@@ -15,6 +15,7 @@ There's also a `/sql-demo` page that walks through what a SQL injection attack l
 - Bcrypt password hashing
 - A capability code required at login in addition to username and password
 - Session based authentication using signed cookies
+- Cloud hosted Postgres database (Neon) instead of a local file, so credentials aren't sitting on a single machine
 
 ## Setup
 
@@ -24,12 +25,13 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Set these environment variables before running the app:
+Create a `.env` file in the project root with the following:
 
 ```
-export SESSION_SECRET="your_random_secret_here"
-export VAULT_SECRET="your_random_secret_here"
-export CAPABILITY_CODE="your_chosen_code_here"
+DATABASE_URL=your_neon_connection_string_here
+SESSION_SECRET=your_random_secret_here
+VAULT_SECRET=your_random_secret_here
+CAPABILITY_CODE=your_chosen_code_here
 ```
 
 Then run it:
@@ -45,8 +47,14 @@ The app will be available at `http://localhost:8000`.
 A few things in this repo are placeholders and should be swapped out before you rely on this anywhere beyond your own testing:
 
 - **`SESSION_SECRET`, `VAULT_SECRET`, `CAPABILITY_CODE`** are read from environment variables with fallback defaults in the code. The fallbacks are not secure and are only there so the app doesn't crash if you forget to set them. Always set your own values as environment variables rather than relying on the defaults.
+- **`DATABASE_URL`** has no fallback, the app will not start without it. Get this from your Neon dashboard under connection details.
 - **The admin account** is created automatically the first time the app runs, using the username and password set in `app.py`. Take a look at that and make sure it's something you're comfortable with before deploying anywhere public.
-- **`securevault.db`** gets created fresh on first run. If you already have one sitting around from before the encryption method changed, delete it first so the app doesn't try to decrypt old data with the new method and error out.
+
+## Deployment
+
+This app is set up to be deployed on Render. The build command is `pip install -r requirements.txt` and the start command is `uvicorn app:app --host 0.0.0.0 --port $PORT`. Environment variables (`DATABASE_URL`, `SESSION_SECRET`, `VAULT_SECRET`, `CAPABILITY_CODE`) are set in Render's dashboard rather than locally.
+
+Live demo link will be added here once deployed.
 
 ## Notes
 
